@@ -18,6 +18,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.MetadataChanges;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -50,7 +51,7 @@ public class ShowDataActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         db = FirebaseFirestore.getInstance();
-        articleListener = db.collection("articles").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        articleListener = db.collection("articles").addSnapshotListener(MetadataChanges.INCLUDE, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -66,8 +67,13 @@ public class ShowDataActivity extends AppCompatActivity {
                         articles.add(article);
                     }
                     adapter.update(articles);
-                    emptyView.setText(R.string.no_articles);
-                    emptyView.setVisibility(articles.isEmpty() ? View.VISIBLE : View.GONE);
+                    if (articles.isEmpty() && snapshots.getMetadata().isFromCache()) {
+                        emptyView.setText(R.string.waiting_for_firestore);
+                        emptyView.setVisibility(View.VISIBLE);
+                    } else {
+                        emptyView.setText(R.string.no_articles);
+                        emptyView.setVisibility(articles.isEmpty() ? View.VISIBLE : View.GONE);
+                    }
                 }
             }
         });

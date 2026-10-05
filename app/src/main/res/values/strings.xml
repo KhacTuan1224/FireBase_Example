@@ -1,3 +1,24 @@
 <resources>
-  <string name="app_name">FireBase_Example</string>
+  <string name="app_name">Article Firebase</string>
+  <string name="add_article">Thêm bài viết</string>
+  <string name="article_id">ID</string>
+  <string name="article_title">Tiêu đề</string>
+  <string name="article_image_url">URL ảnh</string>
+  <string name="article_description">Nội dung</string>
+  <string name="save_article">Lưu bài viết</string>
+  <string name="show_articles">Xem danh sách bài viết</string>
+  <string name="article_image">Ảnh bài viết</string>
+  <string name="article_id_value">ID: %1$s</string>
+  <string name="article_view_value">Lượt xem: %1$d</string>
+  <string name="loading_articles">Đang tải bài viết…</string>
+  <string name="waiting_for_firestore">Đang chờ kết nối Firestore…</string>
+  <string name="no_articles">Chưa có bài viết nào.</string>
+  <string name="back">Quay lại</string>
+  <string name="error_required_fields">Vui lòng nhập đầy đủ các trường.</string>
+  <string name="error_invalid_id">ID không được chứa dấu /</string>
+  <string name="error_invalid_url">URL ảnh phải bắt đầu bằng https://</string>
+  <string name="article_saved">Đã lưu bài viết.</string>
+  <string name="save_failed">Không thể lưu: %1$s</string>
+  <string name="load_failed">Không thể tải dữ liệu: %1$s</string>
+  <string name="view_increment_failed">Không cập nhật được lượt xem: %1$s</string>
 </resources>

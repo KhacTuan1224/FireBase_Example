@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="vn.edu.ueh.thanhdnh.firebase_example" />
-                  <option name="mobileSdkAppId" value="1:734543976421:android:edaaceaa620d4a154ec10c" />
-                  <option name="projectId" value="contactcloud-45f1a" />
-                  <option name="projectNumber" value="734543976421" />
+                  <option name="mobileSdkAppId" value="1:380378918696:android:502849990372f56ebbea1d" />
+                  <option name="projectId" value="contactcloud-e311e" />
+                  <option name="projectNumber" value="380378918696" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
